@@ -5,14 +5,13 @@
 # Creates new refence webpage upon change to continue monitoring.
 # All actions are logged to local file, schedule run with crontab at desired interval recommended once per minute.
 # Crontab syntax: */1  * * * * /<path>/ngenic_diff.sh 
-# Stefan B 2022-10-29
-LOG_FILE="ngenic_diff.log"
+LOG_FILE="/<path>/ngenic_diff.log"
 exec 3>&1 1>>${LOG_FILE} 2>&1
 TIME_STAMP=$(date '+%d/%m/%Y %H:%M:%S')
-MESSAGE="Tibbers Ngenic sida har ändrats!"
+MESSAGE="Tibbers Ngenic page has changed!"
 TITLE="Ngenic"
-APP_TOKEN="<insert your pushover app token>"
-USER_TOKEN="<insert your pushover user token>"
+APP_TOKEN="<app token>"
+USER_TOKEN="<user token>"
 
 WEB_PAGE="https://tibber.com/se/store/produkt/ngenic-tune-smart-termostat"
 REF_HTML=/<path>/ref_ngenic.html
